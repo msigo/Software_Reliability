@@ -1,9 +1,12 @@
-import java.util.Arrays;
+package Software_Reliability.src;
 
 /*
  * Lab 2 Software Reliability
  */
 public class FindMembership {
+	
+	RandomArray randArr = new RandomArray();
+	
 	public FindMembership() {
 	}
 	//(i) Sorting
