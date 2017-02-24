@@ -37,17 +37,18 @@ public class PairWise {
 	/*
 	public static void main(String[] args) {
 		ArrayList<int[]> b = new ArrayList<int[]>();
-		b.add(new int[]{1});
-		b.add(new int[]{1,2});
-		b.add(new int[]{1,2});
-		b.add(new int[]{1,2});
+		b.add(new int[]{7});
+		b.add(new int[]{8});
+		b.add(new int[]{9});
+		
 
 		//System.out.println(Arrays.toString(new PairWise().getPairWise(new int[]{1, 2,3,4},b)));
 		
-		ArrayList<int[]> k = new PairWise().getPairWise(new int[]{1, 2,3,4},b);
+		ArrayList<int[]> k = new PairWise().getPairWise(new int[]{1, 2, 3},b);
 		for(int[] t : k){
 			System.out.println(Arrays.toString(t));
 		} 	
 	}
 	*/
+	
 }

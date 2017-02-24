@@ -1,5 +1,7 @@
 package Software_Reliability.src;
 
+import java.util.ArrayList;
+
 /*
  * Lab 2 Software Reliability
  */
@@ -64,15 +66,36 @@ public class FindMembership {
 		return membership(list,key);
 	}
 	
-	public static void main(String[] args) {
-		new FindMembership();
+	public boolean oracle(int key, int[] list){
 		
-		/*
+		for(int val : list){
+			if (val == key){
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public void writeRandtoFile(){
 		WriteToFile wtf = new WriteToFile();
 		String theFile = "/Users/Addi/git/Software_Reliability/randomArrays.txt";
 		int numberOfArrays = 100;
 		int lengthOfArray = 15;
 		wtf.writeTo(theFile,numberOfArrays,lengthOfArray);
-		*/
+	}
+	
+
+	
+	public void writePairWise(){
+		PairWise pw = new PairWise();
+		
+		//pw.getPairWise(defs, typs)
+	}
+	
+	public static void main(String[] args) {
+		new FindMembership();
+		String arrFile = "/Users/Addi/git/Software_Reliability/randomArrays.txt";
+		
 	}
 }
