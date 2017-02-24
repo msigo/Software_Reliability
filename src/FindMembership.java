@@ -66,5 +66,13 @@ public class FindMembership {
 	
 	public static void main(String[] args) {
 		new FindMembership();
+		
+		/*
+		WriteToFile wtf = new WriteToFile();
+		String theFile = "/Users/Addi/git/Software_Reliability/randomArrays.txt";
+		int numberOfArrays = 100;
+		int lengthOfArray = 15;
+		wtf.writeTo(theFile,numberOfArrays,lengthOfArray);
+		*/
 	}
 }

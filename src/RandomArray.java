@@ -11,17 +11,18 @@ public class RandomArray {
 		Random random = new Random();
 
 		for (int i = 0; i < n; i++) {
-			list.add(random.nextInt());
+			list.add(random.nextInt((100) -50));
 		}
-		System.out.println(list);
+		//System.out.println(list);
 		return list;
 	}
 	
-	
+	/*
 	public static void main(String[] args) {
 		RandomArray ra = new RandomArray();
 		ra.getRandArray(20);
 	}
+	*/
 	
 	
 }
