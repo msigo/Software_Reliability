@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+/*
+ * Lab 2 Software Reliability
+ */
 public class FindMembership {
 	public FindMembership() {
 	}
