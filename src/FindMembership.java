@@ -2,6 +2,7 @@
 //package Software_Reliability.src;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
  * Lab 2 Software Reliability
@@ -28,7 +29,9 @@ public class FindMembership {
 					int tmp = list[i];
 					list[i] = list[i - 1];
 					list[i - 1] = tmp;
+					newLength = i;
 				}
+				
 			}
 			length = newLength;
 		}
@@ -100,8 +103,8 @@ public class FindMembership {
 	}
 
 	public static void main(String[] args) {
-		new FindMembership();
-		String arrFile = "/Users/Addi/git/Software_Reliability/randomArrays.txt";
+		System.out.println(Arrays.toString(new FindMembership().sort(new int[]{3,2,1})));
+		//String arrFile = "/Users/Addi/git/Software_Reliability/randomArrays.txt";
 
 	}
 }

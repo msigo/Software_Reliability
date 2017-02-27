@@ -23,15 +23,6 @@ public class RandomArray {
 			list.add(getRandArray(15));
 		}
 		return list;
-	}
-	
-	/*
-	public static void main(String[] args) {
-		RandomArray ra = new RandomArray();
-		ra.getRandArray(20);
-	}
-	*/
-	
-	
+	}	
 }
 
