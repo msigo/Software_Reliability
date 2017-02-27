@@ -1,19 +1,27 @@
-package Software_Reliability.src;
+//package Software_Reliability.src;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomArray {
-
-	public ArrayList<Integer> getRandArray(int n) {
+	ArrayList<int[]> testCases = getRandArrays(840);
+	
+	public int[] getRandArray(int n) {
 		
-		ArrayList<Integer> list = new ArrayList<Integer>(n);
+		int[] list = new int[n];
 		Random random = new Random();
 
 		for (int i = 0; i < n; i++) {
-			list.add(random.nextInt((100) -50));
+			list[i] = (random.nextInt((50) -25));
 		}
-		//System.out.println(list);
+		return list;
+	}
+	public ArrayList<int[]> getRandArrays(int n){
+		ArrayList<int[]> list = new ArrayList<int[]>();
+
+		for(int i  = 0; i<n;i++){
+			list.add(getRandArray(15));
+		}
 		return list;
 	}
 	

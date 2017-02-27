@@ -1,11 +1,12 @@
-package Software_Reliability.src;
+//package Software_Reliability.src;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class PairWise {
-	int s = 0;
+	ArrayList<int[]> testCases = generateList();
+	
 	public ArrayList<int[]> getPairWise(int[] defs, ArrayList<int[]> typs) {
 		ArrayList<int[]> result = new ArrayList<int[]>();
 
@@ -24,7 +25,6 @@ public class PairWise {
 							int[] newerinstance = instance.clone();
 							newerinstance[j] = element2 ;
 							result.add(newerinstance);
-							System.out.println(s++);
 						}
 					}
 				}
@@ -33,22 +33,23 @@ public class PairWise {
 
 		return result;
 	}
-	
-	/*
-	public static void main(String[] args) {
+	ArrayList<int[]> generateList(){
 		ArrayList<int[]> b = new ArrayList<int[]>();
-		b.add(new int[]{7});
-		b.add(new int[]{8});
-		b.add(new int[]{9});
-		
-
-		//System.out.println(Arrays.toString(new PairWise().getPairWise(new int[]{1, 2,3,4},b)));
-		
-		ArrayList<int[]> k = new PairWise().getPairWise(new int[]{1, 2, 3},b);
-		for(int[] t : k){
-			System.out.println(Arrays.toString(t));
-		} 	
+		b.add(new int[]{7,9});
+		b.add(new int[]{5,9});
+		b.add(new int[]{-2,10});
+		b.add(new int[]{7,10});
+		b.add(new int[]{9,15});
+		b.add(new int[]{2,1});
+		b.add(new int[]{9,6});
+		b.add(new int[]{3,4});
+		b.add(new int[]{-8,10});
+		b.add(new int[]{2,9});
+		b.add(new int[]{5,3});
+		b.add(new int[]{19,-40});
+		b.add(new int[]{9,2});
+		b.add(new int[]{2,3});
+		b.add(new int[]{1,3});		
+		return getPairWise(new int[]{1, 2, 3,4,5,6,7,8,9,10,11,12,13,14,15},b);
 	}
-	*/
-	
 }
