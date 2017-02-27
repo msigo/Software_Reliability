@@ -1,4 +1,4 @@
-//package Software_Reliability.src;
+package Software_Reliability.src;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,9 +13,9 @@ public class WriteToFile {
 				writer.println(ra.getRandArray(lengthOfArray));
 			}
 			writer.close();
-			
+
 		} catch (IOException e) {
-			System.out.println("Error occured while writing to file!!!!!!");
+			System.out.println("Error occured while writing to file!");
 		}
 
 	}

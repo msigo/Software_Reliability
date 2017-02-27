@@ -1,12 +1,7 @@
 
-//package Software_Reliability.src;
+package Software_Reliability.src;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
-/*
- * Lab 2 Software Reliability
- */
 public class FindMembership {
 
 	RandomArray randArr = new RandomArray();
@@ -31,7 +26,67 @@ public class FindMembership {
 					list[i - 1] = tmp;
 					newLength = i;
 				}
-				
+
+			}
+			length = newLength;
+		}
+		return list;
+	}
+
+	public int[] sort_mutation1(int[] list) {
+		int length = list.length;
+
+		int newLength;
+		while (length != 0) {
+			newLength = 0;
+			for (int i = 1; i < length; i++) {
+				if (list[i - 1] > list[i]) {
+					int tmp = list[i];
+					list[i] = list[i - 1];
+					list[i - 1] = tmp;
+					// newLength = i;
+				}
+
+			}
+			length = newLength;
+		}
+		return list;
+	}
+
+	public int[] sort_mutation2(int[] list) {
+		int length = list.length;
+
+		int newLength;
+		while (length != 0) {
+			newLength = 0;
+			for (int i = 2; i < length; i++) { // i =2 instead of 1
+				if (list[i - 1] > list[i]) {
+					int tmp = list[i];
+					list[i] = list[i - 1];
+					list[i - 1] = tmp;
+					// newLength = i;
+				}
+
+			}
+			length = newLength;
+		}
+		return list;
+	}
+
+	public int[] sort_mutation3(int[] list) {
+		int length = list.length;
+
+		int newLength;
+		while (length != 0) {
+			newLength = 0;
+			for (int i = 1; i < length; i++) {
+				if (list[i - 1] < list[i]) {
+					int tmp = list[i];
+					list[i] = list[i - 1];
+					list[i - 1] = tmp;
+					newLength = i;
+				}
+
 			}
 			length = newLength;
 		}
@@ -50,34 +105,109 @@ public class FindMembership {
 	// ensures (\exists int i; 0 <= i && i < list.length-1; list[i]==key) &&
 	// \result | !(\exists int i; 0 <= i && i < list.length-1; list[i]==key) &&
 	// !\result;
-	public int membership(int[] list, int key){
+	public int membership(int[] list, int key) {
 		int lo = 0;
-        int hi = list.length - 1;
-        while (lo <= hi) {
-            // Key is in a[lo..hi] or not present.
-            int mid = lo + (hi - lo) / 2;
-            if      (key < list[mid]) hi = mid - 1;
-            else if (key > list[mid]) lo = mid + 1;
-            else return mid;
-        }
-        return -1;
-		/*int x,l,r;
-		l=1;
-		r=list.length;
-		do{
-			x=(l+r)/2;
-			if(key<list[x]){
-				r = x-1;
-			}
-			else{
-				l=x+1;
+		int hi = list.length - 1;
+		while (lo <= hi) {
+			// Key is in a[lo..hi] or not present.
+			int mid = lo + (hi - lo) / 2;
+			if (key < list[mid])
+				hi = mid - 1;
+			else if (key > list[mid])
+				lo = mid + 1;
+			else
+				return mid;
 		}
-		System.out.println(l + " " + r);	
-		}while(key!=list[x] | l<=r);
-			
-		
-		if(list[x] == key) return x;
-		else return -1;*/
+		return -1;
+		/*
+		 * int x,l,r; l=1; r=list.length; do{ x=(l+r)/2; if(key<list[x]){ r =
+		 * x-1; } else{ l=x+1; } System.out.println(l + " " + r);
+		 * }while(key!=list[x] | l<=r);
+		 * 
+		 * 
+		 * if(list[x] == key) return x; else return -1;
+		 */
+	}
+
+	public int membershipMutation_1(int[] list, int key) {
+		int lo = 0;
+		int hi = list.length - 1;
+		while (lo > hi) { // changed direction and removed equal
+			// Key is in a[lo..hi] or not present.
+			int mid = lo + (hi - lo) / 2;
+			if (key < list[mid])
+				hi = mid - 1;
+			else if (key > list[mid])
+				lo = mid + 1;
+			else
+				return mid;
+		}
+		return -1;
+
+	}
+
+	public int membershipMutation_2(int[] list, int key) {
+		int lo = 0;
+		int hi = list.length - 2; // minus 2 isntead of 1
+		while (lo <= hi) {
+			// Key is in a[lo..hi] or not present.
+			int mid = lo + (hi - lo) / 2;
+			if (key < list[mid])
+				hi = mid - 1;
+			else if (key > list[mid])
+				lo = mid + 1;
+			else
+				return mid;
+		}
+		return -1;
+	}
+
+	public int membershipMutation_3(int[] list, int key) {
+		int lo = 0;
+		int hi = list.length - 1;
+		while (lo <= hi) {
+			// Key is in a[lo..hi] or not present.
+			int mid = lo + (hi - lo) / 2;
+			if (key <= list[mid])
+				hi = mid - 1; // Added equal sign
+			else if (key > list[mid])
+				lo = mid + 1;
+			else
+				return mid;
+		}
+		return -1;
+	}
+
+	public int membershipMutation_4(int[] list, int key) {
+		int lo = 0;
+		int hi = list.length - 1;
+		while (lo <= hi) {
+			// Key is in a[lo..hi] or not present.
+			int mid = lo + (hi - lo) / 2;
+			if (key < list[mid])
+				hi = mid - 1;
+			else if (key >= list[mid])
+				lo = mid + 1; // Added equal sign
+			else
+				return mid;
+		}
+		return -1;
+	}
+
+	public int membershipMutation_5(int[] list, int key) {
+		int lo = 0;
+		int hi = list.length - 1;
+		while (lo == hi) { // removed less than sign and added a equal sign
+			// Key is in a[lo..hi] or not present.
+			int mid = lo + (hi - lo) / 2;
+			if (key < list[mid])
+				hi = mid - 1;
+			else if (key > list[mid])
+				lo = mid + 1;
+			else
+				return mid;
+		}
+		return -1;
 	}
 
 	// (iv) %Binary search
@@ -85,6 +215,36 @@ public class FindMembership {
 	// @ensures key == list[\result] | \result == -1;
 	public int binary_search(int[] list, int key) {
 		list = sort(list);
+		return membership(list, key);
+	}
+
+	public int binary_search_mutation_1(int[] list, int key) {
+		list = sort(list);
+		return membershipMutation_1(list, key);
+	}
+
+	public int binary_search_mutation_2(int[] list, int key) {
+		list = sort_mutation2(list);
+		return membership(list, key);
+	}
+
+	public int binary_search_mutation_3(int[] list, int key) {
+		list = sort(list);
+		return membershipMutation_2(list, key);
+	}
+
+	public int binary_search_mutation_4(int[] list, int key) {
+		list = sort_mutation3(list);
+		return membership(list, key);
+	}
+
+	public int binary_search_mutation_5(int[] list, int key) {
+		list = sort(list);
+		return membershipMutation_5(list, key);
+	}
+
+	public int binary_search_mutation_6(int[] list, int key) {
+		list = sort_mutation1(list);
 		return membership(list, key);
 	}
 
@@ -102,9 +262,4 @@ public class FindMembership {
 		// pw.getPairWise(defs, typs)
 	}
 
-	public static void main(String[] args) {
-		System.out.println(Arrays.toString(new FindMembership().sort(new int[]{3,2,1})));
-		//String arrFile = "/Users/Addi/git/Software_Reliability/randomArrays.txt";
-
-	}
 }
