@@ -21,7 +21,7 @@ public class RandomArray {
 		ArrayList<int[]> list = new ArrayList<int[]>();
 
 		for (int i = 0; i < n; i++) {
-			list.add(getRandArray(100));
+			list.add(getRandArray(16));
 		}
 		return list;
 	}

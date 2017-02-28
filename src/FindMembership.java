@@ -162,39 +162,8 @@ public class FindMembership {
 		return -1;
 	}
 
+
 	public int membershipMutation_3(int[] list, int key) {
-		int lo = 0;
-		int hi = list.length - 1;
-		while (lo <= hi) {
-			// Key is in a[lo..hi] or not present.
-			int mid = lo + (hi - lo) / 2;
-			if (key <= list[mid])
-				hi = mid - 1; // Added equal sign
-			else if (key > list[mid])
-				lo = mid + 1;
-			else
-				return mid;
-		}
-		return -1;
-	}
-
-	public int membershipMutation_4(int[] list, int key) {
-		int lo = 0;
-		int hi = list.length - 1;
-		while (lo <= hi) {
-			// Key is in a[lo..hi] or not present.
-			int mid = lo + (hi - lo) / 2;
-			if (key < list[mid])
-				hi = mid - 1;
-			else if (key >= list[mid])
-				lo = mid + 1; // Added equal sign
-			else
-				return mid;
-		}
-		return -1;
-	}
-
-	public int membershipMutation_5(int[] list, int key) {
 		int lo = 0;
 		int hi = list.length - 1;
 		while (lo == hi) { // removed less than sign and added a equal sign
@@ -240,7 +209,7 @@ public class FindMembership {
 
 	public int binary_search_mutation_5(int[] list, int key) {
 		list = sort(list);
-		return membershipMutation_5(list, key);
+		return membershipMutation_3(list, key);
 	}
 
 	public int binary_search_mutation_6(int[] list, int key) {

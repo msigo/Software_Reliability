@@ -36,7 +36,7 @@ public class PairWise {
 	}
 
 	ArrayList<int[]> generateList() {
-		int N = 100;
+		int N = 16;
 		ArrayList<int[]> b = new ArrayList<int[]>();
 		Random r = new Random();
 		int[] temp = new int[N];
