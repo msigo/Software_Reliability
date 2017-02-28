@@ -17,11 +17,14 @@ public class PerformTests {
 		System.out.println("Mutation Random\t\tPairwise");
 		while (true) {
 			testCase = randomTC.testCases.get(i).clone();
+			int lastElemArr = testCase.length - 1;
 			key = testCase[testCase.length - 1];
-			list = Arrays.copyOfRange(testCase, 0, testCase.length - 1);
+			list = Arrays.copyOfRange(testCase, 0, lastElemArr);
+			//if(i==0) System.out.println(Arrays.toString(list));
 			res = func.binary_search_mutation_1(list, key);
 
-			if (!oracle(key, Arrays.copyOfRange(testCase, 0, testCase.length - 1), res)) {
+			
+			if (!oracle(key, Arrays.copyOfRange(testCase, 0, lastElemArr), res)) {
 				break;
 			}
 			i++;
@@ -53,6 +56,8 @@ public class PerformTests {
 			testCase = randomTC.testCases.get(i).clone();
 			key = testCase[testCase.length - 1];
 			list = Arrays.copyOfRange(testCase, 0, testCase.length - 1);
+			//if(i==0) System.out.println(Arrays.toString(list));
+
 			res = func.binary_search_mutation_2(list, key);
 
 			if (!oracle(key, Arrays.copyOfRange(testCase, 0, testCase.length - 1), res)) {

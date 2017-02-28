@@ -36,7 +36,7 @@ public class PairWise {
 	}
 
 	ArrayList<int[]> generateList() {
-		int N = 16;
+		int N = 8;
 		ArrayList<int[]> b = new ArrayList<int[]>();
 		Random r = new Random();
 		int[] temp = new int[N];
@@ -44,6 +44,7 @@ public class PairWise {
 		for (int i = 0; i < temp.length; i++) {
 			b.add(new int[] { r.nextInt(50) - 25, r.nextInt(50) - 25 });
 		}
+		
 		// b.add(new int[]{r.nextInt(50)-25,r.nextInt(50)-25});
 		// b.add(new int[]{r.nextInt(50)-25,r.nextInt(50)-25});
 		// b.add(new int[]{r.nextInt(50)-25,r.nextInt(50)-25});
@@ -58,12 +59,23 @@ public class PairWise {
 		// b.add(new int[]{r.nextInt(50)-25,r.nextInt(50)-25});
 		// b.add(new int[]{r.nextInt(50)-25,r.nextInt(50)-25});
 		// b.add(new int[]{b.get(5)[0],b.get(13)[1]});
+		
+		
 		for (int i = 0; i < temp.length; i++) {
 			temp[i] = r.nextInt(50) - 25;
 		}
+		
 		// int[] temp = new
 		// int[]{r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25,r.nextInt(50)-25};
+		
 		temp[N - 1] = temp[6];
+		//temp[2] = temp[10];
+		
+		//b.get(N-1)[0] =temp[7]; 
+		
+
+		
+		
 		return getPairWise(temp, b);
 	}
 }

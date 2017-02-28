@@ -164,9 +164,9 @@ public class FindMembership {
 
 
 	public int membershipMutation_3(int[] list, int key) {
-		int lo = 0;
+		int lo = 4; //changed this number from zero
 		int hi = list.length - 1;
-		while (lo == hi) { // removed less than sign and added a equal sign
+		while (lo <= hi) { 
 			// Key is in a[lo..hi] or not present.
 			int mid = lo + (hi - lo) / 2;
 			if (key < list[mid])
